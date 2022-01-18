@@ -68,7 +68,7 @@ template <typename T> void Bag<T>::clear() {
 }
 
 template <typename T> std::size_t Bag<T>::getFrequencyOf(const T& entry) const { 
-    
+//Get the size of the Bag by iterating through the vector
     int counter = 0;
 
     for (int i = 0; i < getCurrentSize(); i++) {
@@ -84,7 +84,8 @@ template <typename T> std::size_t Bag<T>::getFrequencyOf(const T& entry) const {
 }
 
 template <typename T> bool Bag<T>::contains(const T& entry) const { 
-   
+//Identify if a value exsits in the Bag by going through elements in vector
+
    for (int i = 0; i <= getCurrentSize(); i++) {
        
         if (dataVector[i] == entry){
