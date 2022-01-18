@@ -1,0 +1,5 @@
+/home/elizabeth/Documents/Homework/Homework0/add_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Homework/Homework0/add_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Homework/Homework0/add_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Homework/Homework0/add_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Homework/Homework0/add_starter_code/CMakeFiles/add-tests.dir

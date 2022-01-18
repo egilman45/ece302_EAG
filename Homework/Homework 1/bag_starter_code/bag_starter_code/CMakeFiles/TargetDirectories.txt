@@ -1,0 +1,5 @@
+/home/elizabeth/Documents/Homework/Homework 1/bag_starter_code/bag_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Homework/Homework 1/bag_starter_code/bag_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Homework/Homework 1/bag_starter_code/bag_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Homework/Homework 1/bag_starter_code/bag_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Homework/Homework 1/bag_starter_code/bag_starter_code/CMakeFiles/bag-tests.dir
