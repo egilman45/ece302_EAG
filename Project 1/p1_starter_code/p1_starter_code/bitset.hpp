@@ -54,9 +54,16 @@ public:
 
 private:
 
+  //Holds length of Bitset
   intmax_t length;
+
+  //Allocate memory for bitsetData
   int * bitsetData;
+
+  //Determine if Bitset is valid
   bool validBitset;
+
+  //Holds String of Bitset
   std::string stringData;
   
 
