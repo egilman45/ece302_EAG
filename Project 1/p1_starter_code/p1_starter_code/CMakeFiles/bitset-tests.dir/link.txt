@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/bitset-tests.dir/bitset_test.cpp.o CMakeFiles/bitset-tests.dir/bitset.cpp.o  -o bitset-tests 
