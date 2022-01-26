@@ -1,0 +1,5 @@
+/home/elizabeth/Documents/Homework 2/bag_interface_starter_code/bag_interface_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Homework 2/bag_interface_starter_code/bag_interface_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Homework 2/bag_interface_starter_code/bag_interface_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Homework 2/bag_interface_starter_code/bag_interface_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Homework 2/bag_interface_starter_code/bag_interface_starter_code/CMakeFiles/bag-tests.dir
