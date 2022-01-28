@@ -19,7 +19,7 @@ TEST_CASE( "Different Size Constructor", "[bitset]" ) {
     REQUIRE(b.good());
 
     //Test an invalid bitset size
-    Bitset a(0);
+    Bitset a(-1);
     REQUIRE(a.good()==false);
 }
 

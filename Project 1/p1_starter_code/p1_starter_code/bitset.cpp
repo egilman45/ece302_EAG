@@ -17,7 +17,12 @@ Bitset::Bitset() {
 
 Bitset::Bitset(intmax_t size) {
 
-    length = size;
+    if (size<0){
+        length = size * -1;
+    }
+    else {
+        length = size;
+    }
 
     bitsetData = new int [length];
 
