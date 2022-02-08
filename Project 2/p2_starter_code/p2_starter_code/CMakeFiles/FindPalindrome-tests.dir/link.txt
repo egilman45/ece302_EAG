@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/FindPalindrome-tests.dir/FindPalindrome.cpp.o CMakeFiles/FindPalindrome-tests.dir/FindPalindrome_test.cpp.o  -o FindPalindrome-tests 

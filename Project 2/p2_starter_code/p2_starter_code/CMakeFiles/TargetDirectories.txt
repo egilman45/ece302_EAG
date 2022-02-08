@@ -1,0 +1,6 @@
+/home/elizabeth/Documents/Project 2/p2_starter_code/p2_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Project 2/p2_starter_code/p2_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Project 2/p2_starter_code/p2_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Project 2/p2_starter_code/p2_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Project 2/p2_starter_code/p2_starter_code/CMakeFiles/FindPalindrome-main.dir
+/home/elizabeth/Documents/Project 2/p2_starter_code/p2_starter_code/CMakeFiles/FindPalindrome-tests.dir
