@@ -17,6 +17,7 @@ TEST_CASE("Testing Insert") {
     LinkedList<int> l;
     REQUIRE(l.insert(3,45)==false);
     REQUIRE(l.getLength()==0);
+    //Getting segmentation error
     REQUIRE(l.insert(1,45));
     REQUIRE(l.getLength()==1);
 }

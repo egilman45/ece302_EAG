@@ -1,0 +1,5 @@
+/home/elizabeth/Documents/Homework 4/starter_code-1/starter_code/ordered_list_array_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Homework 4/starter_code-1/starter_code/ordered_list_array_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Homework 4/starter_code-1/starter_code/ordered_list_array_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Homework 4/starter_code-1/starter_code/ordered_list_array_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Homework 4/starter_code-1/starter_code/ordered_list_array_starter_code/CMakeFiles/test_array_list.dir

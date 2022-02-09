@@ -44,7 +44,8 @@ public:
 private:
 
   // TODO
-  point* nextElement;
+  int *dynamicArray;
+  int sizeArray;
   
 };
 
