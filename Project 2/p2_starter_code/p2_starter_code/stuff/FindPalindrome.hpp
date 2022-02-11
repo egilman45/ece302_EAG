@@ -14,7 +14,6 @@ private:
 	int possiblePalindromes = 0;
 	std::vector<std::vector<std::string>> vectorVectorPalidromes; 
 	std::vector<std::string> vectorKnownPalindromes; 
-	std::vector<std::string> currentVector; 
 	
 	// ...
 	
