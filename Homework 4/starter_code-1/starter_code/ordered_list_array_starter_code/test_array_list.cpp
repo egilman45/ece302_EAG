@@ -21,7 +21,7 @@ TEST_CASE( "Test insert element" ) {
   REQUIRE(a.insert(1,10));
   REQUIRE(a.isEmpty()==false);
   REQUIRE(a.getLength()==1);
-  REQUIRE(a.insert(1,20)); 
+  REQUIRE(a.insert(2,20)); 
   REQUIRE(a.getLength()==2);
   REQUIRE(a.getEntry(1)==10);
   REQUIRE(a.getEntry(2)==20);

@@ -17,7 +17,7 @@ LinkedList<T>::~LinkedList()
 template <typename T>
 LinkedList<T>::LinkedList(const LinkedList<T>& x)
 {
-
+  
 }
 
 template <typename T>
@@ -48,64 +48,59 @@ std::size_t LinkedList<T>::getLength() const
 template <typename T>
 bool LinkedList<T>::insert(std::size_t position, const T& item)
 {
-  //Can you index past something not created yet??
-  if(position > getLength()+1) {
+  //Check parameters are valid
+  if(position > getLength()+1 || position < 1) {
     return false;
   }
 
-  Node<int>* currentPtr = headPtr;
-
-  //Traverse to the desired node index in list
-  for(int i = 0; i < position; i++) {
-    //Get to the node that is position - 1
-
-    while(currentPtr->getNext() != nullptr) {
-    //Make sure not at the end
-
-      //Set current pointer to the next pointer
-      currentPtr = currentPtr->getNext();
-    }
-  }
-
   //Create new pointer to where new node is
-  Node<int>* newNodePtr = new Node<T>();
-  newNodePtr->setItem(item);
+  Node<T>* newNodePtr = new Node<T>(item);
 
-  if(getLength() == 0) {
+  if(position == 1) {
 
-    //If no other elements set pointer to the head pointer
+    newNodePtr->setNext(headPtr);
+
     headPtr = newNodePtr;
 
   } else {
 
-    //Create pointer to previous index orginal next
-    Node<int>* orgIndexNext = currentPtr->getNext();
+    //create current point
+    Node<T>* currentPtr = headPtr;
+
+    //travesre through the nodes
+    for (int i = 1; i < position-1; i++) {
+      while(currentPtr->getNext() != nullptr) {
+        //Keep iterating with next until previous node
+        currentPtr = currentPtr->getNext();
+      }
+    }
+    
+    //Set node to previous 
+    Node<T>* previousPtr = currentPtr;
 
     //Set new node next to the previous index orginal next
-    newNodePtr->setNext(orgIndexNext);
+    newNodePtr->setNext(previousPtr->getNext());
 
     //Set previous index next to new node pointer
-    currentPtr->setNext(newNodePtr);
+    previousPtr->setNext(newNodePtr);
 
-
-    numItems++; //Add to element counter
   }
-
+  numItems++;
   return true;
 }
 
 template <typename T>
 bool LinkedList<T>::remove(std::size_t position)
 {
-  //Can you index past something not created yet??
-  if(position > getLength()) {
+  //Check parameters are valid
+  if(position > getLength()+1 || position < 1) {
     return false;
   }
 
   Node<int>* currentPtr = headPtr;
 
   //Traverse to the desired node index in list
-  for(int i = 0; i < position; i++) {
+  for(int i = 1; i < position-1; i++) {
     //Get to the node that is position - 1
 
     while(currentPtr->getNext() != nullptr) {
@@ -116,10 +111,10 @@ bool LinkedList<T>::remove(std::size_t position)
     }
   }
 
-  if(getLength() == 0) {
+  if(getLength() == 1) {
 
     //If no other elements set pointer to the head pointer
-    headPtr = nullptr;
+    headPtr = headPtr->getNext();
 
   } else {
 
@@ -132,7 +127,7 @@ bool LinkedList<T>::remove(std::size_t position)
     //Set orginal next to skip over 
     currentPtr->setNext(removeNextPtr);
 
-    numItems++; //Add to element counter
+    numItems--; //Add to element counter
   }
 
   return true;
@@ -162,14 +157,14 @@ void LinkedList<T>::clear()
 template <typename T>
 T LinkedList<T>::getEntry(std::size_t position) const
 {
-  if(position > getLength()+1) {
-    return NULL;
-  }
+  //if(position > getLength()+1) {
+  //  return nullptr;
+  //}
 
   Node<int>* currentPtr = headPtr;
 
   //Traverse to the desired node index in list
-  for(int i = 0; i <= position; i++) {
+  for(int i = 1; i < position; i++) {
     //Get to the node that is position
 
     while(currentPtr->getNext() != nullptr) {
@@ -185,15 +180,15 @@ T LinkedList<T>::getEntry(std::size_t position) const
 template <typename T>
 void LinkedList<T>::setEntry(std::size_t position, const T& newValue)
 {
-  //Does not like this:
-  //if(position > getLength()+1) {
-  //  return 0;
-  //}
+
+  if(position > getLength()+1 || position < 1) {
+    return;
+  }
 
   Node<int>* currentPtr = headPtr;
 
   //Traverse to the desired node index in list
-  for(int i = 0; i <= position; i++) {
+  for(int i = 1; i < position; i++) {
     //Get to the node that is position
 
     while(currentPtr->getNext() != nullptr) {
