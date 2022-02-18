@@ -20,13 +20,14 @@ TEST_CASE( "Test FindPalindrome add a non-allowable word")
 TEST_CASE("Testing adding valid word to vector") {
 
 	FindPalindrome b;
-	REQUIRE(b.add("hello")==false);
-	b.clear();
+	REQUIRE(b.add("hello"));
 	REQUIRE(b.add("abba"));
 	std::vector<std::string> strings = {"he11o", "hey there", "bye"};
 	REQUIRE(b.add(strings)==false);
 	
 }
+
+
 
 TEST_CASE("Cut-Test 1") {
 	FindPalindrome b;
@@ -45,9 +46,14 @@ TEST_CASE("Cut-Test 1") {
 	stringsVector = {"banana", "banana", "banana"};
 	REQUIRE(b.cutTest1(stringsVector) == false);
 
+	stringsVector = {"bannab"};
+	REQUIRE(b.cutTest1(stringsVector) == true);
+
 	stringsVector = {"hey", "there", "whatsup"};
 	REQUIRE(b.cutTest1(stringsVector) == false);
 }
+
+
 
 TEST_CASE("Cut-Test 2") {
 	FindPalindrome b;
@@ -77,7 +83,14 @@ TEST_CASE("Cut-Test 2") {
 TEST_CASE("Test Clear Funciton") {
 
 	FindPalindrome b;
-	std::vector<std::string> vectorWords = {"h", "e", "h"};
+	std::vector<std::string> vectorWords = {"hannah"};
+	REQUIRE(b.add(vectorWords));
+	REQUIRE(b.number()==1);
+	b.clear();
+	REQUIRE(b.number()==0);
+
+	vectorWords = {"Was", "it", "acar", "or", "a", "cat", "I", "saw"};
+	REQUIRE(b.cutTest1(vectorWords));
 	REQUIRE(b.add(vectorWords));
 	REQUIRE(b.number()==2);
 	b.clear();
@@ -90,30 +103,46 @@ TEST_CASE("Test Add String Function") {
 
 	FindPalindrome b;
 	std::vector<std::string> vectorWords = {"h", "e", "h"};
+	REQUIRE(b.add(vectorWords)==false);
+	vectorWords = {"be", "eb", "pp"};
+	REQUIRE(b.cutTest1(vectorWords));
 	REQUIRE(b.add(vectorWords));
-	REQUIRE(b.number()==2);
-	REQUIRE(b.add("h")==false);
-	REQUIRE(b.number()==0);
-	REQUIRE(b.add("h"));
-	REQUIRE(b.number()==24);
+	REQUIRE((b.number())==2);
+	b.clear();
+	vectorWords = {"race", "car"};
+	REQUIRE(b.cutTest1(vectorWords));
+	REQUIRE(b.add(vectorWords));
+	REQUIRE((b.number())==1);
+	vectorWords = {"race", "car", };
+	REQUIRE(b.add(vectorWords)==false);
+
 
 }
 
 TEST_CASE("Test Add Vector Function") {
 
 	FindPalindrome b;
-	std::vector<std::string> vectorWords = {"race", "car", "race", "car"};
+	std::vector<std::string> vectorWords = {"hannah", "hannah"};
+	REQUIRE(b.add(vectorWords)==false);
+
+	vectorWords = {"a", "AA", "AaA"};
+	REQUIRE(b.add(vectorWords));
+	REQUIRE(b.number()==6);
+	b.clear();
+
+	vectorWords = {"A", "nut", "for", "a", "jar", "of", "tuna"};
+	REQUIRE(b.cutTest1(vectorWords));
 	REQUIRE(b.add(vectorWords));
 	REQUIRE(b.number()==4);
 	b.clear();
-	vectorWords = {"race", "car", "car"};
-	REQUIRE(b.add(vectorWords)==false);
+
+	vectorWords = {"Murder", "for", "a", "jar", "of"};
+	REQUIRE(b.add(vectorWords));
 	REQUIRE(b.number()==0);
-	REQUIRE(b.add("race"));
-	REQUIRE(b.number()==4);
-	b.clear();
-	vectorWords = {"hannah", "hannah"};
+	vectorWords = {"red", "rum"};
 	REQUIRE(b.add(vectorWords));
 	REQUIRE(b.number()==2);
+	b.clear();
 
 }
+

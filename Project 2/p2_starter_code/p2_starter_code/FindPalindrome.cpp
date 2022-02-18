@@ -34,6 +34,7 @@ static void removeSpaces(string & value) {
 void FindPalindrome::recursiveFindPalindromes(vector<string>
         candidateStringVector, vector<string> currentStringVector)
 {
+	//std::cout << "Enter Recursive." << std::endl;
 
 	std::string stringCandidate = "";
 	for(int i = 0; i < candidateStringVector.size(); i++){
@@ -183,7 +184,7 @@ FindPalindrome::~FindPalindrome()
 
 int FindPalindrome::number() const
 {
-	return possiblePalindromes;
+	return vectorKnownPalindromes.size();
 }
 
 void FindPalindrome::clear()
@@ -195,30 +196,54 @@ void FindPalindrome::clear()
 
 bool FindPalindrome::cutTest1(const vector<string> & stringVector)
 {
+	//Define needed variables
 	int oddCounter = 0;
 	int counter = 0;
 	std::string newString;
 
+	//Create string of new vector
 	for(int i = 0; i < stringVector.size(); i++){
 		newString = newString + stringVector[i];
 	}
+
+	convertToLowerCase(newString);
+
+	//std::cout << "Cut Test 1 Testing: " << newString << std::endl;
 	
+	//Go through all the characters
 	for(int j = 0; j < newString.size(); j++) {
+		
+		//Define char to check each iteration
 		char checkChar = newString[j];
+		//std::cout << "Checking: " << checkChar << std::endl;
+
+		//Reset counter to zero
 		counter = 0;
+
+		//Go through all the characters again and check for repetition
 		for(int k = 0; k < newString.size(); k++) {
+			//std::cout << k;
 			if (checkChar == newString[k]) {
+				//std::cout << "Check Against: " << newString[k] << std::endl;
+				
 				counter++;
+				
+				//std::cout << "Counter: " << counter << std::endl;
 			}
 		}
+
+		//If appears odd number of times
 		if(counter % 2 != 0) {
 			oddCounter++;
 		}
 
 		if(oddCounter > 1) {
+			//std::cout << "Cut Test 1 Return False" << std::endl;
 			return false;
 		}
 	}
+
+	//std::cout << "Cut Test 1 Return True" << std::endl;
 	
 	return true;
 }
@@ -227,12 +252,15 @@ bool FindPalindrome::cutTest2(const vector<string> & stringVector1,
                               const vector<string> & stringVector2)
 {
 
+	//Declare needed variables
 	std::vector<std::string> biggerVector;
 	std::vector<std::string> smallerVector;
 	std::string smallerVectorString;
 	std::string biggerVectorString;
+
 	int counter = 0;
 
+	//Determine which of the enteries is bigger
 	if(stringVector1.size()>stringVector2.size()) {
 		biggerVector = stringVector1;
 		smallerVector = stringVector2;
@@ -242,23 +270,43 @@ bool FindPalindrome::cutTest2(const vector<string> & stringVector1,
 	}
 
 	
-
+	//Create String of Smaller Vector
 	for(int y = 0; y < smallerVector.size(); y++){
 		smallerVectorString = smallerVectorString + smallerVector[y];
 	}
 
-	for(int z = 0; z < smallerVector.size(); z++){
+	//Create String of Larger Vector
+	for(int z = 0; z < biggerVector.size(); z++){
 		biggerVectorString = biggerVectorString + biggerVector[z];
 	}
 
+	//std::cout << "Cut Test 2 Testing: " << smallerVectorString << biggerVectorString << std::endl;
+
+	int hold = 0;
+
+	//Go through all the characters in the smaller string
 	for(int j = 0; j < smallerVectorString.size(); j++) {
+		
+		//Create char varaible of the smaller string to check
 		char checkChar = smallerVectorString[j];
+
+		//Counter to see if any chars aren't found
+		//should not be zero to pass test
 		counter = 0;
+
+		//Go through the bigger string and see if the char
+		//in the small is found in the bigger one
 		for(int k = 0; k < biggerVectorString.size(); k++) {
 			if (checkChar == biggerVectorString[k]) {
+				hold = k;
 				counter++;
 			}
 		}
+
+		//Erase the found letter, for duplicates must find another
+		biggerVectorString.erase(hold);
+
+		//If counter is still zero, char was not found so fails
 		if(counter == 0) {
 			return false;
 		}
@@ -280,28 +328,44 @@ bool FindPalindrome::add(const string & value)
 		}
 	}
 
-	currentVector.push_back(value);
-	for(int i = 0; i < currentVector.size(); i++) {
-		std::cout << currentVector[i];
+	//Check for duplicates in the vector
+	for(int k = 0; k < currentVector.size(); k++){
+		if(value == currentVector[k]){
+			return false;
+		}
 	}
-	std::cout << std::endl;
+
+	//std::cout << "Add value " << value << " to current." << std::endl;
+	currentVector.push_back(value);
+
+	//for(int i = 0; i < currentVector.size(); i++) {
+	//	std::cout << currentVector[i];
+	//}
+	//std::cout << std::endl;
 
 	//Check if vector has potential to be palindrome
-	if(cutTest1(currentVector) != true) {
+	if(cutTest1(currentVector) == true) {
+		//std::cout << "Pass Cut Test 1." << std::endl;
 		//Does not pass cut test 1, no reason to keep going
-		return false;
+		possiblePalindromes = 0;
+		vectorVectorPalidromes.clear();
+		vectorKnownPalindromes.clear();
 
+		//Call recursive function
+		//std::cout << "Call Recursive." << std::endl;
+		std::vector<std::string> candidateStringVector;
+		recursiveFindPalindromes(candidateStringVector, currentVector);
+
+			/*std::cout << "KNOWN PALINDROMES: ";
+			for(int f = 0; f < vectorKnownPalindromes.size(); f++){
+				std::cout << vectorKnownPalindromes[f] << " ";
+			}
+			std::cout << std::endl;*/
+
+	} else {
+		//std::cout << "Cut Test 1 Failed." << std::endl;
 	}
-
-	//Call recursive function
-	std::vector<std::string> candidateStringVector;
-	recursiveFindPalindromes(candidateStringVector, currentVector);
 	
-	std::cout << "KNOWN PALINDROMES: ";
-	for(int f = 0; f < vectorKnownPalindromes.size(); f++){
-		std::cout << vectorKnownPalindromes[f] << " ";
-	}
-	std::cout << std::endl;
 
 	return true;
 }
@@ -309,11 +373,31 @@ bool FindPalindrome::add(const string & value)
 bool FindPalindrome::add(const vector<string> & stringVector)
 {
 	possiblePalindromes = 0;
-	bool returnSuccess = true;
+	int repCounter = 0;
+
 	for(int i = 0; i < stringVector.size(); i++){
 
 			bool success = true;
 			std::string value = stringVector[i];
+
+			//Check for duplicates in the current vector
+			for(int k = 0; k < currentVector.size(); k++){
+				if(value == currentVector[k]){
+					return false;
+				}
+			}
+			
+			repCounter = 0;
+
+			//Check for duplicates in the given vector
+			for(int q = 0; q < stringVector.size(); q++){
+				if(value == stringVector[q]){
+					repCounter++;
+				}
+			}
+			if(repCounter > 1) {
+				return false;
+			}
 
 			for(int i = 0; i < value.size(); i++){
 				if (value[i] >= 65 && value[i] <= 90) {
@@ -321,38 +405,47 @@ bool FindPalindrome::add(const vector<string> & stringVector)
 				} else if (value[i] >= 97 && value[i] <= 122) {
 					containsLowerCase = true; 
 				} else {
-					success = false;
+					return false;
 				}
-			}
-
-			if (success == false) {
-				returnSuccess = false;
 			}
 
 	}
 
 	for(int i = 0; i < stringVector.size(); i++) {
+		//std::cout << "Add value " << stringVector[i] << " to current." << std::endl;
 		currentVector.push_back(stringVector[i]);
 	}
 
 	//Check if vector has potential to be palindrome
-	if(cutTest1(currentVector) != true) {
+	if(cutTest1(currentVector) == true) {
+		//std::cout << "Pass Cut Test 1." << std::endl;
 		//Does not pass cut test 1, no reason to keep going
-		return false;
+		possiblePalindromes = 0;
+		vectorVectorPalidromes.clear();
+		vectorKnownPalindromes.clear();
 
+		//Call recursive function
+		//std::cout << "Call Recursive." << std::endl;
+		std::vector<std::string> candidateStringVector;
+		recursiveFindPalindromes(candidateStringVector, currentVector);
+
+		/*std::cout << "KNOWN PALINDROMES: ";
+			for(int f = 0; f < vectorKnownPalindromes.size(); f++){
+				std::cout << vectorKnownPalindromes[f] << " ";
+			}
+		std::cout << std::endl; */
+
+	} else {
+		//std::cout << "Cut Test 1 Failed." << std::endl;
 	}
-
-	//Call recursive function
-	std::vector<std::string> candidateStringVector;
-	recursiveFindPalindromes(candidateStringVector, currentVector);
 	
-	std::cout << "KNOWN PALINDROMES: ";
-	for(int f = 0; f < vectorKnownPalindromes.size(); f++){
-		std::cout << vectorKnownPalindromes[f] << " ";
-	}
-	std::cout << std::endl;
+	//std::cout << "KNOWN PALINDROMES: ";
+	//for(int f = 0; f < vectorKnownPalindromes.size(); f++){
+	//	std::cout << vectorKnownPalindromes[f] << " ";
+	//}
+	//std::cout << std::endl;
 
-	return returnSuccess;
+	return true;
 }
 
 vector< vector<string> > FindPalindrome::toVector() const
