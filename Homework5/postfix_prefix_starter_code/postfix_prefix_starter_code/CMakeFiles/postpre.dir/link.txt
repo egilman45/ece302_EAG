@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/postpre.dir/postpre.cpp.o CMakeFiles/postpre.dir/algebraic_expressions.cpp.o  -o postpre 

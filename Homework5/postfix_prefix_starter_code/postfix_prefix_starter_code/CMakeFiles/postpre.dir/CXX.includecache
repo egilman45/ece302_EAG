@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/algebraic_expressions.cpp
+string
+-
+iostream
+-
+stack
+-
+cctype
+-
+algebraic_expressions.hpp
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/algebraic_expressions.hpp
+
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/algebraic_expressions.hpp
+string
+-
+

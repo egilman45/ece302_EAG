@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: /home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code
+# Build directory: /home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(test1 "/postpre" "ab+")
+set_tests_properties(test1 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\+)(a)(b)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;11;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test2 "/postpre" "ab-")
+set_tests_properties(test2 PROPERTIES  PASS_REGULAR_EXPRESSION "(-)(a)(b)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;14;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test3 "/postpre" "ab*")
+set_tests_properties(test3 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\*)(a)(b)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;17;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test4 "/postpre" "ab/")
+set_tests_properties(test4 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\/)(a)(b)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;20;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test5 "/postpre" "aA+")
+set_tests_properties(test5 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\+)(a)(A)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;24;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test6 "/postpre" "Xi+")
+set_tests_properties(test6 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\+)(X)(i)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;27;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test7 "/postpre" "RR+")
+set_tests_properties(test7 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\+)(R)(R)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;30;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test8 "/postpre" "qv+")
+set_tests_properties(test8 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\+)(q)(v)" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;33;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test9 "/postpre" "AB*CD/+")
+set_tests_properties(test9 PROPERTIES  PASS_REGULAR_EXPRESSION "(\\+)(\\*)AB(\\/)CD" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;37;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test10 "/postpre" "hr*Rf-+tg-ef/*-")
+set_tests_properties(test10 PROPERTIES  PASS_REGULAR_EXPRESSION "-(\\+)(\\*)hr-Rf(\\*)-tg(\\/)ef" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;41;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test11 "/postpre" "hr*Rf-+tg-ef/*")
+set_tests_properties(test11 PROPERTIES  WILL_FAIL "true" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;46;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test12 "/postpre" "hr**Rf-+tg-ef/-")
+set_tests_properties(test12 PROPERTIES  WILL_FAIL "true" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;47;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test13 "/postpre" "hr*f-+tgef/*-")
+set_tests_properties(test13 PROPERTIES  WILL_FAIL "true" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;48;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test14 "/postpre" "hr*Rf-tg-ef/*-h")
+set_tests_properties(test14 PROPERTIES  WILL_FAIL "true" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;49;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")
+add_test(test15 "/postpre" "h*R+f-tg-ef/*")
+set_tests_properties(test15 PROPERTIES  WILL_FAIL "true" _BACKTRACE_TRIPLES "/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;50;ADD_TEST;/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeLists.txt;0;")

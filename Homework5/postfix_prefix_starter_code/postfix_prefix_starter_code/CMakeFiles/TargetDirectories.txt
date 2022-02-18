@@ -1,0 +1,5 @@
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Homework5/postfix_prefix_starter_code/postfix_prefix_starter_code/CMakeFiles/postpre.dir
