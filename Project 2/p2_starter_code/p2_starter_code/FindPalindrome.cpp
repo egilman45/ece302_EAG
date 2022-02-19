@@ -64,14 +64,15 @@ void FindPalindrome::recursiveFindPalindromes(vector<string>
 		//If palindrome add to vector of know palindromes
 		
 		if (isPalindromeBool == true) {
-			//Increment palindrom counter
-			possiblePalindromes++;
-			
+		
 			//Put string into known palindrome
 			vectorKnownPalindromes.push_back(stringCandidate);
 			
 			//Add vector to known palindrome vectors
 			vectorVectorPalidromes.push_back(candidateStringVector);
+
+			//Set size
+			possiblePalindromes = vectorKnownPalindromes.size();
 			
 
 		} 
@@ -117,8 +118,6 @@ void FindPalindrome::recursiveFindPalindromes(vector<string>
 
 		//Erase word from current string
 		currentStringVector.erase(currentStringVector.begin()+j);
-
-	
 
 		//Now with new candidate vector do recursive call
 		recursiveFindPalindromes(candidateStringVector, currentStringVector);
@@ -275,10 +274,14 @@ bool FindPalindrome::cutTest2(const vector<string> & stringVector1,
 		smallerVectorString = smallerVectorString + smallerVector[y];
 	}
 
+	convertToLowerCase(smallerVectorString);
+
 	//Create String of Larger Vector
 	for(int z = 0; z < biggerVector.size(); z++){
 		biggerVectorString = biggerVectorString + biggerVector[z];
 	}
+
+	convertToLowerCase(biggerVectorString);
 
 	//std::cout << "Cut Test 2 Testing: " << smallerVectorString << biggerVectorString << std::endl;
 
@@ -317,6 +320,10 @@ bool FindPalindrome::cutTest2(const vector<string> & stringVector1,
 
 bool FindPalindrome::add(const string & value)
 {
+	std::string temp;
+	std::string valueTemp = value;
+	convertToLowerCase(valueTemp);
+
 	possiblePalindromes = 0;
 	for(int i = 0; i < value.size(); i++){
 		if (value[i] >= 65 && value[i] <= 90) {
@@ -330,7 +337,9 @@ bool FindPalindrome::add(const string & value)
 
 	//Check for duplicates in the vector
 	for(int k = 0; k < currentVector.size(); k++){
-		if(value == currentVector[k]){
+		temp = currentVector[k];
+		convertToLowerCase(temp);
+		if(valueTemp == temp){
 			return false;
 		}
 	}
@@ -374,15 +383,21 @@ bool FindPalindrome::add(const vector<string> & stringVector)
 {
 	possiblePalindromes = 0;
 	int repCounter = 0;
+	std::string temp;
 
 	for(int i = 0; i < stringVector.size(); i++){
 
 			bool success = true;
 			std::string value = stringVector[i];
+			convertToLowerCase(value);
 
 			//Check for duplicates in the current vector
 			for(int k = 0; k < currentVector.size(); k++){
+				//std::cout << "Value: " << value << std::endl;
+				//std::cout << "Check Against: " << currentVector[k] << std::endl;
+				
 				if(value == currentVector[k]){
+					//std::cout << "Return False." << std::endl;
 					return false;
 				}
 			}
@@ -391,11 +406,18 @@ bool FindPalindrome::add(const vector<string> & stringVector)
 
 			//Check for duplicates in the given vector
 			for(int q = 0; q < stringVector.size(); q++){
-				if(value == stringVector[q]){
-					repCounter++;
+				temp = stringVector[q];
+				convertToLowerCase(temp);
+				if(q != i) {
+					//std::cout << "Value: " << value << std::endl;
+					//std::cout << "Check Against: " << temp << std::endl;
+					if(value == temp){
+						repCounter++;
+					}
 				}
 			}
-			if(repCounter > 1) {
+			if(repCounter > 0) {
+				//std::cout << "DUPLICATE" << std::endl;
 				return false;
 			}
 
@@ -439,11 +461,11 @@ bool FindPalindrome::add(const vector<string> & stringVector)
 		//std::cout << "Cut Test 1 Failed." << std::endl;
 	}
 	
-	//std::cout << "KNOWN PALINDROMES: ";
-	//for(int f = 0; f < vectorKnownPalindromes.size(); f++){
-	//	std::cout << vectorKnownPalindromes[f] << " ";
-	//}
-	//std::cout << std::endl;
+	/*std::cout << "KNOWN PALINDROMES: ";
+	for(int f = 0; f < vectorKnownPalindromes.size(); f++){
+		std::cout << vectorKnownPalindromes[f] << " ";
+	}
+	std::cout << std::endl; */
 
 	return true;
 }
