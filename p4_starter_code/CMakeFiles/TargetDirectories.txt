@@ -1,0 +1,11 @@
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/pathfinder.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/student-tests.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/CMakeFiles/compare.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/lib/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/lib/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/lib/CMakeFiles/test.dir
+/home/elizabeth/Documents/newProject4/p4_starter_code/p4_starter_code/lib/CMakeFiles/image.dir
