@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/testBinaryTree.dir/test.cpp.o  -o testBinaryTree 
