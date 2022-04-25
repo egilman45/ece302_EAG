@@ -1,0 +1,6 @@
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/CMakeFiles/rebuild_cache.dir
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/CMakeFiles/edit_cache.dir
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/CMakeFiles/test.dir
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/CMakeFiles/submission.dir
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/CMakeFiles/test_solver.dir
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/CMakeFiles/test_frontier_queue.dir

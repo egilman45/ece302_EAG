@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/frontier_queue.hpp
+state.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/state.hpp
+vector
+-
+frontier_queue.tpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/frontier_queue.tpp
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/frontier_queue.tpp
+frontier_queue.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/frontier_queue.hpp
+math.h
+-
+iostream
+-
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/puzzle.hpp
+utility
+-
+string
+-
+sstream
+-
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/puzzle_solver.cpp
+puzzle_solver.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/puzzle_solver.hpp
+functional
+-
+unordered_set
+-
+puzzle.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/puzzle.hpp
+state.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/state.hpp
+frontier_queue.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/frontier_queue.hpp
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/puzzle_solver.hpp
+utility
+-
+puzzle.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/puzzle.hpp
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/state.hpp
+state.tpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/state.tpp
+
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/state.tpp
+state.hpp
+/home/elizabeth/Documents/Project 5/p5_starter_code/p5_starter_code/state.hpp
+
